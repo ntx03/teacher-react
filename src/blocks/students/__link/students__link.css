@@ -1,0 +1,21 @@
+.students__link {
+    text-decoration: none;
+    font-family: inter, "Helvetica Neue", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 1.15;
+    color: black;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    background-color: whitesmoke;
+    max-width: 100px;
+    margin: 0 auto 0 auto;
+    padding: 7.5px 7.5px 6.0px 7.5px;
+    border-radius: 5px;
+    /*border: black 1px solid;*/
+}
+
+.students__link:hover {
+    background-color: rgba(75, 192, 8, 0.616);
+    transition: 0.5s;
+}
