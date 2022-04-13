@@ -28,6 +28,7 @@ import Рабочая_программа_седьмой_класс from '../docu
 import Рабочая_программа_девятый_класс from '../documents/teachers/work_programm/рабочая программа 9 класс.docx';
 import Рабочая_программа_десятый_класс from '../documents/teachers/work_programm/рабочая программа 10 класс.docx';
 import Рабочая_программа_11_класс from '../documents/teachers/work_programm/рабочая программа 11 б.docx';
+import MenuItemPage from './MenuItemPage';
 
 function Colleagues() {
 
@@ -56,8 +57,10 @@ function Colleagues() {
 
                 <div className="parents__menu">
                     <ul className="parents__menu-container">
-                        <MenuItem way={'/colleagues'} text={'ПОМОЩЬ ПЕДАГОГУ'} onPage={colleagues} />
-                        <MenuItem way={'/colleagues/work'} text={"РАБОЧИЕ ПРОГРАММЫ"} onPage={colleaguesWork} />
+                        <MenuItemPage way={'/colleagues'} text={'ПОМОЩЬ ПЕДАГОГУ'} onPage={colleagues} />
+
+                        <MenuItemPage way={'/colleagues/work'} text={"РАБОЧИЕ ПРОГРАММЫ"} onPage={colleaguesWork} />
+
                     </ul>
                 </div>
                 <div className="greetings__container">

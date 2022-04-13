@@ -1,7 +1,15 @@
 import React from 'react';
 
-function AboutMe({ handleOpenPopup }) {
+function AboutMe({ item, isOpen }) {
 
+    function handleClick(e) {
+        isOpen(true);
+        const target = e.target;
+        return item({
+            name: target.alt,
+            link: target.src,
+        })
+    }
 
     return (
         <main className="content">
@@ -9,7 +17,7 @@ function AboutMe({ handleOpenPopup }) {
                 <div className="me__container">
                     <div className="me__container-biography">
                         <div className="me__image-container">
-                            <img className="me__image me__image-biography" onClick={handleOpenPopup} src={require('../images/aboutMe.jpg')}
+                            <img id='s' className="me__image me__image-biography" onClick={handleClick} src={require('../images/aboutMe.jpg')}
                                 alt="фотография анны коротаевой" />
                         </div>
                         <div className="me__container-text">
@@ -35,7 +43,7 @@ function AboutMe({ handleOpenPopup }) {
                     <div className="me__container-documents">
                         <p className="me__title">Встреча с министром просвещения Кравцовым С.С., Артек, июль 2021 г.</p>
                         <div className="me__card-container">
-                            <img className="me__image" src={require('../images/Министр.jpg')}
+                            <img className="me__image" onClick={handleClick} src={require('../images/Министр.jpg')}
                                 alt="Фотография Аны Которавевой с министром образования России" />
                         </div>
                     </div>
@@ -52,30 +60,30 @@ function AboutMe({ handleOpenPopup }) {
                         <p className="me__title">Повышение квалификации</p>
                         <div className="me__container-cards">
                             <div className="me__card-container">
-                                <img className="me__image" src={require('../images/Повышение квалификации/Артек (pdf.io).jpg')}
+                                <img className="me__image" onClick={handleClick} src={require('../images/Повышение квалификации/Артек (pdf.io).jpg')}
                                     alt="удостоверение о повышении квалификации" />
                             </div>
                             <div className="me__card-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Повышение квалификации/повышение квалификации (pdf.io).jpg')}
                                     alt="удостоверение о повышении квалификации" />
                             </div>
                             <div className="me__card-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Повышение квалификации/повышение квал.2 (pdf.io).jpg')}
                                     alt="удостоверение о повышении квалификации" />
                             </div>
                             <div className="me__card-container">
-                                <img className="me__image" src={require('../images/Повышение квалификации/повышен.3 (pdf.io).jpg')}
+                                <img className="me__image" onClick={handleClick} src={require('../images/Повышение квалификации/повышен.3 (pdf.io).jpg')}
                                     alt="удостоверение о повышении квалификации" />
                             </div>
                             <div className="me__card-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Мои достижения/Сертификат Коротаева А.Ю. (pdf.io).jpg')}
                                     alt="сертификат" />
                             </div>
                             <div className="me__card-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170752-001 (pdf.io).jpg')}
                                     alt="Благодарность" />
                             </div>
@@ -85,19 +93,19 @@ function AboutMe({ handleOpenPopup }) {
                         <p className="me__title">Мои достижения</p>
                         <div className="me__container-vinner">
                             <div className="me__vinner-container">
-                                <img className="me__image" src={require('../images/Мои достижения/самые значим (pdf.io).jpg')}
+                                <img className="me__image" onClick={handleClick} src={require('../images/Мои достижения/самые значим (pdf.io).jpg')}
                                     alt="Благодарность" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image" src={require('../images/Мои достижения/значимая (pdf.io).jpg')}
+                                <img className="me__image" onClick={handleClick} src={require('../images/Мои достижения/значимая (pdf.io).jpg')}
                                     alt="Диплом" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image" src={require('../images/Мои достижения/за олимпиады (pdf.io).jpg')}
+                                <img className="me__image" onClick={handleClick} src={require('../images/Мои достижения/за олимпиады (pdf.io).jpg')}
                                     alt="Благодарность" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image" src={require('../images/Мои достижения/тоже крутая (pdf.io).jpg')}
+                                <img className="me__image" onClick={handleClick} src={require('../images/Мои достижения/тоже крутая (pdf.io).jpg')}
                                     alt="сертификат" />
                             </div>
 
@@ -107,71 +115,71 @@ function AboutMe({ handleOpenPopup }) {
                         <p className="me__title">Достижения учеников</p>
                         <div className="me__container-vinner">
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170224-001 (pdf.io).jpg')}
                                     alt="Благодарность" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170252-001 (pdf.io).jpg')} alt="Диплом" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170327-001 (pdf.io).jpg')}
                                     alt="Благодарность" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170405-001 (pdf.io).jpg')}
                                     alt="сертификат" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170428-001 (pdf.io).jpg')}
                                     alt="сертификат" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170453-001 (pdf.io).jpg')}
                                     alt="Благодарность" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170555-001 (pdf.io).jpg')}
                                     alt="Благодарность" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170620-001 (pdf.io).jpg')}
                                     alt="сертификат" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170650-001 (pdf.io).jpg')}
                                     alt="сертификат" />
                             </div>
 
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/img-220209170850-001 (pdf.io).jpg')} alt="Диплом" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/изображение 12.02.2021_1 грамота.jpg')}
                                     alt="Грамота" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/изображение_12.02.2022_грамота_2.jpg')}
                                     alt="Грамота" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image"
+                                <img className="me__image" onClick={handleClick}
                                     src={require('../images/Достижения учеников/изображение_12.02.2022_грамота_Захаров.jpg')}
                                     alt="Грамота" />
                             </div>
                             <div className="me__vinner-container">
-                                <img className="me__image" src={require('../images/Достижения учеников/конференция (pdf.io).jpg')}
+                                <img className="me__image" onClick={handleClick} src={require('../images/Достижения учеников/конференция (pdf.io).jpg')}
                                     alt="Благодарность" />
                             </div>
                         </div>

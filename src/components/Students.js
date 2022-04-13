@@ -11,6 +11,7 @@ import при_пожаре from '../documents/kids/по пожару.jpg'
 import школа from '../documents/kids/Пямятка-Дорога-в-школу-и-обратно.jpg'
 import советы from '../documents/kids/Советы_начинающим_велосипедистам.jpg'
 import поведение from '../documents/kids/террор.jpeg'
+import MenuItemPage from './MenuItemPage';
 
 function Students() {
 
@@ -40,9 +41,12 @@ function Students() {
         <main className="content">
             <div className="parents__menu">
                 <ul className="parents__menu-container">
-                    <MenuItem way={'/students'} text={'ПРАВИЛА БЕЗОПАСНОСТИ'} onPage={students} />
-                    <MenuItem way={'/students/platform'} text={'ПЛАТФОРМЫ ПОМОЩНИКИ'} onPage={platform} />
-                    <MenuItem way={'/students/examination'} text={'ПОДГОТОВКА К ЭКЗАМЕНАМ'} onPage={examination} />
+                    <MenuItemPage way={'/students'} text={'ПРАВИЛА БЕЗОПАСНОСТИ'} onPage={students} />
+
+                    <MenuItemPage way={'/students/platform'} text={'ПЛАТФОРМЫ ПОМОЩНИКИ'} onPage={platform} />
+
+                    <MenuItemPage way={'/students/examination'} text={'ПОДГОТОВКА К ЭКЗАМЕНАМ'} onPage={examination} />
+
                 </ul>
             </div>
             <section className="students">

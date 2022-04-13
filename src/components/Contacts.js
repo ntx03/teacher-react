@@ -1,6 +1,7 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import VK from '../images/vk_color_white.svg'
 import instagramm from '../images/instagram_color_white.svg';
+import $ from 'jquery';
 
 function Contacts() {
 
@@ -15,6 +16,27 @@ function Contacts() {
         setDescription(e.target.value)
     }
 
+    function submit() {
+        // отправка формы 
+        $(document).ready(function () {
+            //E-mail Ajax Send
+            $("form").submit(function () { //Change
+                var th = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: "../mail.php", //Change
+                    data: th.serialize()
+                }).done(function () {
+                    alert("Спасибо за сообщение!");
+                    setTimeout(function () {
+                        // Done Functions
+                        th.trigger("reset");
+                    }, 1000);
+                });
+                return false;
+            });
+        });
+    }
     return (
         <main className="content">
             <section className="contacts">
@@ -54,7 +76,7 @@ function Contacts() {
                         </div>
                     </div>
                     <div className="contacts__map">
-                        <iframe className="contacts__box"
+                        <iframe className="contacts__box" frameBorder="0"
                             src={"https://yandex.ru/map-widget/v1/?um=constructor%3A2c0945238dd9075ae80d280cb605337be499c6c16056db4071d2ef253c7247d8&amp;source=constructor"}
                         ></iframe>
                     </div>
@@ -71,7 +93,7 @@ function Contacts() {
                         <textarea type="text" required placeholder="Текст сообщения" onChange={onChangeText} value={description || ''} minLength="2"
                             maxLength="1000" name="message" className="contact__textarea"></textarea>
 
-                        <button id="button_form" className="contacts__button" type="submit">Отправить</button>
+                        <button id="button_form" className="contacts__button" type="submit" onClick={submit} >Отправить</button>
                     </form>
                 </div>
             </section>

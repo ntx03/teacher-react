@@ -8,6 +8,7 @@ function Header() {
     // хук useLocation();
     let location = useLocation();
 
+    // изменяем состояние цвета меню при клике 
     const [main, setMain] = useState(false);
     const [colleagues, setColleagues] = useState(false);
     const [aboutMe, setAboutMe] = useState(false);
@@ -17,6 +18,9 @@ function Header() {
     const [photo, setPhoto] = useState(false);
     const [contacts, setContacts] = useState(false);
     const [news, setNews] = useState(false);
+
+    // состояние кнопки меню
+    const [button, setButton] = useState(false);
 
     // меняем цвет меню в зависимости от того, где находится пользователь
     useEffect(() => {
@@ -63,6 +67,16 @@ function Header() {
         } else { setNews(false); }
     })
 
+    // открываем меню
+    function onMenu() {
+        setButton(true);
+    }
+
+    // закрываем меню
+    function offMenu() {
+        setButton(false);
+    }
+
     return (
         <header className="header">
             <div className="header__title-container">
@@ -77,22 +91,22 @@ function Header() {
                 <p className="header__slogan-autor">В.А.Сухомлинский</p>
             </div>
             <div className="header__menu-button-container">
-                <button className="header__menu-button"></button>
+                <button className="header__menu-button" onClick={onMenu}></button>
                 <p className="header__menu-button-text">МЕНЮ</p>
             </div>
-            <div className="header__menu">
+            <div className={button ? "header__menu header__menu_open" : "header__menu"}>
                 <ul className="header__menu-container header__menu-container_row">
-                    <MenuItem way={'/'} text={"ГЛАВНАЯ"} onPage={main} />
-                    <MenuItem way={'/aboutme'} text={"О СЕБЕ"} onPage={aboutMe} />
-                    <MenuItem way={'/students'} text={"УЧЕНИКАМ"} onPage={students} />
-                    <MenuItem way={'/parents'} text={"РОДИТЕЛЯМ"} onPage={parents} />
-                    <MenuItem way={'/colleagues'} text={"КОЛЛЕГАМ"} onPage={colleagues} />
+                    <MenuItem way={'/'} text={"ГЛАВНАЯ"} onPage={main} onClick={offMenu} />
+                    <MenuItem way={'/aboutme'} text={"О СЕБЕ"} onPage={aboutMe} onClick={offMenu} />
+                    <MenuItem way={'/students'} text={"УЧЕНИКАМ"} onPage={students} onClick={offMenu} />
+                    <MenuItem way={'/parents'} text={"РОДИТЕЛЯМ"} onPage={parents} onClick={offMenu} />
+                    <MenuItem way={'/colleagues'} text={"КОЛЛЕГАМ"} onPage={colleagues} onClick={offMenu} />
                 </ul>
                 <ul className="header__menu-container header__menu-container_row">
-                    <MenuItem way={'/video'} text={"ВИДЕО"} onPage={video} />
-                    <MenuItem way={'/photo'} text={"ФОТО"} onPage={photo} />
-                    <MenuItem way={'/contacts'} text={"КОНТАКТЫ"} onPage={contacts} />
-                    <MenuItem way={'/news'} text={"НОВОСТИ"} onPage={news} />
+                    <MenuItem way={'/video'} text={"ВИДЕО"} onPage={video} onClick={offMenu} />
+                    <MenuItem way={'/photo'} text={"ФОТО"} onPage={photo} onClick={offMenu} />
+                    <MenuItem way={'/contacts'} text={"КОНТАКТЫ"} onPage={contacts} onClick={offMenu} />
+                    <MenuItem way={'/news'} text={"НОВОСТИ"} onPage={news} onClick={offMenu} />
                 </ul>
             </div>
         </header>
@@ -100,3 +114,4 @@ function Header() {
 }
 
 export default Header;
+

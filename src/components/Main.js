@@ -2,7 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import korotaeva from "../images/изображение_viber_2022-02-01_21-57-12-418.jpg"
 
-function Main() {
+function Main({ item, isOpen }) {
+
+    function handleClick(e) {
+        isOpen(true);
+        const target = e.target;
+        return item({
+            name: target.alt,
+            link: target.src,
+        })
+    }
     return (
         <main className="content">
             <section className="greetings">
@@ -10,7 +19,7 @@ function Main() {
                 <h2 className="greetings__title">Вас приветствует учитель географии Коротаева Анна Юрьевна!</h2>
                 <div className="greetings__container">
                     <div className="greetings__image-container">
-                        <img className="greetings__image" src={korotaeva}
+                        <img className="greetings__image" onClick={handleClick} src={korotaeva}
                             alt="Анна Коротаева - учитель географии." />
                     </div>
                     <div className="greetings__container-text">

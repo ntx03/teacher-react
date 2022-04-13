@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
@@ -23,16 +23,18 @@ function App() {
   const closePopup = () => {
     setPopup(false);
   }
-
-  // открытие попапа
-  function handleOpenPopup() {
-    debugger;
-    setPopup(true);
-    const item = {
-      name: document.querySelector('.me_image').alt,
-      link: document.querySelector('.me_image').src,
+  // закрываем попап по esc
+  useEffect(() => {
+    if (popup) {
+      const closePopupEsc = (evt) => {
+        if (evt.key === 'Escape') {
+          document.removeEventListener('keydown', closePopupEsc);
+          closePopup();
+        }
+      }
+      document.addEventListener('keydown', closePopupEsc);
     }
-  }
+  }, [popup])
 
   return (
     <div className='app'>
@@ -40,7 +42,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/'>
-            <Main />
+            <Main item={setItem} isOpen={setPopup} />
           </Route>
           <Route path='/esse'>
             <Esse />
@@ -49,7 +51,7 @@ function App() {
             <Colleagues />
           </Route>
           <Route path='/aboutme'>
-            <AboutMe handleOpenPopup={handleOpenPopup} />
+            <AboutMe item={setItem} isOpen={setPopup} />
           </Route>
           <Route path='/students'>
             <Students />
@@ -61,18 +63,18 @@ function App() {
             <Parents />
           </Route>
           <Route path='/photo'>
-            <Photo />
+            <Photo item={setItem} isOpen={setPopup} />
           </Route>
           <Route path='/contacts'>
             <Contacts />
           </Route>
           <Route path='/news'>
-            <News />
+            <News item={setItem} isOpen={setPopup} />
           </Route>
         </Switch>
         <Footer />
       </div>
-      <Popup isOpen={popup} onClose={closePopup} name={item.name} link={require('../images/aboutMe.jpg')} />
+      <Popup isOpen={popup} onClose={closePopup} name={item.name} link={item.link} />
     </div>
   );
 }

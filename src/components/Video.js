@@ -3,6 +3,7 @@ import VideoCard from './VideoCard';
 import MenuItem from './MenuItem';
 import { Route, useLocation } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import MenuItemPage from './MenuItemPage';
 
 function Video() {
 
@@ -25,8 +26,8 @@ function Video() {
         <main className="content">
             <div className="parents__menu">
                 <ul className="parents__menu-container">
-                    <MenuItem way={'/video'} text={'ПРОФОРИЕНТАЦИЯ'} onPage={video} />
-                    <MenuItem way={'/video/school'} text={'ШКОЛЬНАЯ ЖИЗНЬ'} onPage={school} />
+                    <MenuItemPage way={'/video'} text={'ПРОФОРИЕНТАЦИЯ'} onPage={video} />
+                    <MenuItemPage way={'/video/school'} text={'ШКОЛЬНАЯ ЖИЗНЬ'} onPage={school} />
                 </ul>
             </div>
             <section className="video">

@@ -12,9 +12,9 @@
     border: 1px solid #DCDCDC;
 }
 
-@media (max-width:410px) {
+@media (max-width:460px) {
     .parents__menu {
-        margin: 10px auto 30px auto;
-        border: 1px solid #DCDCDC;
+        background-color: rgba(0, 0, 0, 0.0);
+        border: none;
     }
 }
