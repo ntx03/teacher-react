@@ -24,7 +24,7 @@ function Header() {
 
     // меняем цвет меню в зависимости от того, где находится пользователь
     useEffect(() => {
-        if (location.pathname === '/') {
+        if (location.pathname === '/main') {
             setMain(true); setColleagues(false); setVideo(false); setStudents(false);
         } else { setMain(false); }
         if (location.pathname === '/colleagues/work') {
@@ -96,7 +96,7 @@ function Header() {
             </div>
             <div className={button ? "header__menu header__menu_open" : "header__menu"}>
                 <ul className="header__menu-container header__menu-container_row">
-                    <MenuItem way={'/'} text={"ГЛАВНАЯ"} onPage={main} onClick={offMenu} />
+                    <MenuItem way={'/main'} text={"ГЛАВНАЯ"} onPage={main} onClick={offMenu} />
                     <MenuItem way={'/aboutme'} text={"О СЕБЕ"} onPage={aboutMe} onClick={offMenu} />
                     <MenuItem way={'/students'} text={"УЧЕНИКАМ"} onPage={students} onClick={offMenu} />
                     <MenuItem way={'/parents'} text={"РОДИТЕЛЯМ"} onPage={parents} onClick={offMenu} />

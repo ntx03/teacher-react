@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
@@ -41,7 +41,8 @@ function App() {
       <div className='page'>
         <Header />
         <Switch>
-          <Route exact path='/'>
+          <Redirect exact from="/" to="/main" />
+          <Route exact path='/main'>
             <Main item={setItem} isOpen={setPopup} />
           </Route>
           <Route path='/esse'>
