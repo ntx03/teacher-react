@@ -17,6 +17,17 @@ function News({ item, isOpen }) {
             <section className="news">
                 <div className="news__block">
                     <NewsBlock
+                        data={'18.01.2023г.'}
+                        text={'Мастер-класс по оказанию первой помощи на заседании РМО педагогов по воспитательной работе Исетского района "РДДМ- территория возможностей". Говорили про Ожоги Инородные тела в верхних дыхательных путях СЛР'}
+                        header={'Мастер-класс по оказанию первой помощи'} />
+                    <div className="photo__block">
+                        <PhotoContainer link={require('../images/NEWS/2023/3.jpg')} onClick={handleClick} name={'Мастер-класс по оказанию первой помощи'} />
+                        <PhotoContainer link={require('../images/NEWS/2023/2.jpg')} onClick={handleClick} name={'Мастер-класс по оказанию первой помощи'} />
+                        <PhotoContainer link={require('../images/NEWS/2023/1.jpg')} onClick={handleClick} name={'Мастер-класс по оказанию первой помощи'} />
+                    </div>
+                </div>
+                <div className="news__block">
+                    <NewsBlock
                         data={'18.02.2022г.'}
                         text={'Дети учились строить Розу ветров, а на практической части на улице учились определять направление ветра, и его скорость. Ветер в этот день практически отсутствовал, средняя скорость была 1 м/сек.'}
                         header={'18.02.2022 на уроке географии в 6 классах изучали тему Ветер.'} />

@@ -18,7 +18,7 @@ function Contacts() {
 
     function submit() {
         // отправка формы 
-        $(document).ready(function () {
+        $.ready(function () {
             //E-mail Ajax Send
             $("form").submit(function () { //Change
                 var th = $(this);
@@ -67,18 +67,17 @@ function Contacts() {
                         </div>
                         <div className="contacts__social-network">
                             <p className="contacts__text">Социальные сети:</p>
-                            <a href={"https://vk.com/id6268101"} target='_blank'
+                            <a href={"https://vk.com/id6268101"} target='blank'
                                 className="contacts__social-network-link"><img className="contacts__social-network-icon"
                                     src={VK} alt='логотип vk' /></a>
-                            <a href={"https://www.instagram.com/navigator_detstva_to/"} target='_blank'
+                            <a href={"https://www.instagram.com/navigator_detstva_to/"} target='blank'
                                 className="contacts__social-network-link"><img className="contacts__social-network-icon"
                                     src={instagramm} alt='логотип instagramm' /></a>
                         </div>
                     </div>
                     <div className="contacts__map">
                         <iframe className="contacts__box" frameBorder="0"
-                            src={"https://yandex.ru/map-widget/v1/?um=constructor%3A2c0945238dd9075ae80d280cb605337be499c6c16056db4071d2ef253c7247d8&amp;source=constructor"}
-                        ></iframe>
+                            src={"https://yandex.ru/map-widget/v1/?um=constructor%3A2c0945238dd9075ae80d280cb605337be499c6c16056db4071d2ef253c7247d8&amp;source=constructor"}></iframe>
                     </div>
                 </div>
                 <div className="contacts__form-container">

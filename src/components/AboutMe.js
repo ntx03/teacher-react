@@ -50,10 +50,7 @@ function AboutMe({ item, isOpen }) {
                     <div className="me__container-documents">
                         <p className="me__title">Видеопрезентация "Я - учитель"</p>
                         <div className="me__card-container">
-                            <iframe className="me__image" src={"https://www.youtube.com/embed/doXTZWsOjUE"}
-                                title="YouTube video player" frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen></iframe>
+                            <iframe className="me__image" src="https://rutube.ru/play/embed/fcd1ddeb8ede0a16a3b201bb1c25635c" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                         </div>
                     </div>
                     <div className="me__container-documents">

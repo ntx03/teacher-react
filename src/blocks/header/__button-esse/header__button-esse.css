@@ -1,11 +1,14 @@
 .header__button-esse {
     min-width: 75px;
-    padding: 5px 0 5px 0;
+    padding: 10px 0 10px 0;
     margin: 0 auto 0 auto;
-
+    border-radius: 10px;
+    border: none;
+    outline: 1px black solid;
+    transition: 0.2s;
 }
 
 .header__button-esse:hover {
-    background-color: whitesmoke;
+    transform: scale(1.05);
     cursor: pointer;
 }

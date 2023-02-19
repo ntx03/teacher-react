@@ -36,13 +36,13 @@ function Video() {
                         <p className="video__text-heaher">Выбирай свою будущую профессию уже сейчас!</p>
                         <div className="video__block">
                             <VideoCard
-                                link={"https://www.youtube.com/embed/LNrzbiWHmgM"}
+                                link={"https://vk.com/video4391481_456239046"}
                                 name={'КНАУФ, основанная в 1932 году, является семейной компанией попроизводству строительных материалов и систем, в которой трудится множество сотрудников различных национальностей.'} />
                             <VideoCard
-                                link={"https://www.youtube.com/embed/sYxEFRkmpQU"}
+                                link={"https://rutube.ru/play/embed/bfcc7954fa0379b49ee322931ec65a77"}
                                 name={'СИБУР Тобольск (ранее — Тобольский нефтехимический комбинат,Тобольск-Нефтехим) — российское (ранее советское) нефтехимическое предприятие, расположенное в городе Тобольске Тюменской области. Предназначено для глубокой переработки широкой фракции лёгких углеводородов.'} />
                             <VideoCard
-                                link={"https://www.youtube.com/embed/oSSVUKgSAew"}
+                                link={"https://rutube.ru/play/embed/ed0f54b70b230b7d4305a56ea1c413b8"}
                                 name={'«Тобольск-Полимер» — реализованный компанией СИБУР в рамках государственной программы, проект крупнейшего в России промышленного комплекса по переработке компонентов попутного нефтяного газа (ПНГ) с получением востребованных марок полимеров. Входит в тройку крупнейших подобных производств в мире[1]. Расположен в городе Тобольске Тюменской области.'} />
                             <VideoCard
                                 link={"https://www.youtube.com/embed/UKgUznabBGU"}
@@ -63,13 +63,13 @@ function Video() {
                         <p className="video__text-heaher">Когда мы вместе - это сила!</p>
                         <div className="video__block">
                             <VideoCard
-                                link={"https://www.youtube.com/embed/w-zOnzGSjwY"}
+                                link={"https://rutube.ru/play/embed/c4074c4bb47d0c6206689241edfe0b59"}
                                 name={'Флэшмоб ко Дню студента, учащиеся МАОУ исетской СОШ 1 поздравляют с Днём студента.'} />
                             <VideoCard
-                                link={"https://www.youtube.com/embed/wOfpWlkbMes"}
+                                link={"https://rutube.ru/play/embed/c33b525d6c342f093579ddcca6674e22"}
                                 name={'Флэшмоб - акция к Дню флага от РДШ, Отряд 3, летний оздоровительный лагерь.'} />
                             <VideoCard
-                                link={"https://www.youtube.com/embed/HXd7Ub9i-Yo"}
+                                link={"https://rutube.ru/play/embed/17c75c85f980f94c7d7c5bb208d93185"}
                                 name={'К Дню русского языка, который будет 21 февраля 6 а класс подготовил приветствия на разных языках мира.'} />
                         </div>
                     </Route>

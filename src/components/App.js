@@ -39,9 +39,9 @@ function App() {
   return (
     <div className='app'>
       <div className='page'>
+        <Redirect exact from='/' to='/main' />
         <Header />
         <Switch>
-          <Redirect exact from="/" to="/main" />
           <Route exact path='/main'>
             <Main item={setItem} isOpen={setPopup} />
           </Route>
