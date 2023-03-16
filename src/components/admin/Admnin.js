@@ -1,14 +1,15 @@
 import { React, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Admin.css";
 
 function Admin() {
   const [auth, setAuth] = useState(false);
   const [errorAuth, setErrorAuth] = useState(false);
+  const navigate = useNavigate();
 
   const autorization = () => {
-    setAuth(true);
+    navigate("/");
   };
   return (
     <div className="admin">

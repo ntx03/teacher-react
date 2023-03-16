@@ -31,35 +31,40 @@ function AboutMe({ item, isOpen }) {
               <div className="me__container-text">
                 <p className="me__text">
                   {" "}
-                  Родилась 10 октября 1990 года в с. Исетское Исетского района
-                  Тюменской области. Окончила школу в 2008 году и поступила в
-                  Тюменский государственный университет на специальность
-                  География. Вела активную общественную жизнь. Участвовала в
-                  областной студ. весне, разрабатывали и реализовывали проекты в
-                  «Молодой гвардии», активно вовлекали иностранных студентов.
+                  Родилась 10 октября 1990 года в с. Исетское Исетского района Тюменской области. Окончила школу в 2008 году и поступила в Тюменский
+                  государственный университет на специальность География. Вела активную общественную жизнь. Участвовала в областной студ. весне,
+                  разрабатывали и реализовывали проекты в «Молодой гвардии», активно вовлекали иностранных студентов.
                 </p>
                 <p className="me__text">
                   {" "}
-                  Окончила университет в 2013 году и вернулась в родное село,
-                  где сразу начала работать в МАОУ Исетской СОШ №1 c. Исетское
-                  Тюменской области. География всегда привлекала меня, манила к
-                  путешествиям. На своих уроках пытаюсь развить познавательный
-                  интерес. Мы с детьми активно участвуем в районных
-                  конференциях, проводим экологические акции и запускаем
-                  челенджи, проводим волонтерские мероприятия.
+                  Окончила университет в 2013 году и вернулась в родное село, где сразу начала работать в МАОУ Исетской СОШ №1 c. Исетское Тюменской
+                  области. География всегда привлекала меня, манила к путешествиям. На своих уроках пытаюсь развить познавательный интерес. Мы с
+                  детьми активно участвуем в районных конференциях, проводим экологические акции и запускаем челенджи, проводим волонтерские
+                  мероприятия.
                 </p>
                 <p className="me__text">
-                  В настоящее время увлекаюсь чтением педагогической литературы,
-                  вышиваю крестиком, бисером, люблю готовить и проводить время с
+                  В настоящее время увлекаюсь чтением педагогической литературы, вышиваю крестиком, бисером, люблю готовить и проводить время с
                   семьей, веду блог в инстаграме «Навигатора детства».
                 </p>
               </div>
             </div>
             <div className="me__container-documents">
-              <p className="me__title">
-                Встреча с министром просвещения Кравцовым С.С., Артек, июль 2021
-                г.
-              </p>
+              <p className="me__title">Видеопрезентация "Я - учитель"</p>
+              <div className="me__card-container">
+                {/* <iframe  frameBorder={0} src="https://youtu.be/U8vALd5nYbs" /> */}
+                {/* <iframe frameBorder={0} src="https://dzen.ru/video/watch/6412daa5a2bc0f6db417a672?share_to=link" /> */}
+                <iframe
+                  className="me__image"
+                  src="https://www.youtube.com/embed/U8vALd5nYbs"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div className="me__container-documents">
+              <p className="me__title">Встреча с министром просвещения Кравцовым С.С., Артек, июль 2021 г.</p>
               <div className="me__card-container">
                 <img
                   className="me__image"
@@ -69,19 +74,7 @@ function AboutMe({ item, isOpen }) {
                 />
               </div>
             </div>
-            <div className="me__container-documents">
-              <p className="me__title">Видеопрезентация "Я - учитель"</p>
-              <div className="me__card-container">
-                <iframe
-                  className="me__image"
-                  src="https://rutube.ru/play/embed/fcd1ddeb8ede0a16a3b201bb1c25635c"
-                  frameBorder="0"
-                  webkitAllowFullScreen
-                  mozallowfullscreen
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
+
             <div className="me__container-documents">
               <p className="me__title">Повышение квалификации</p>
               <div className="me__container-cards">
@@ -147,12 +140,7 @@ function AboutMe({ item, isOpen }) {
                   />
                 </div>
                 <div className="me__vinner-container">
-                  <img
-                    className="me__image"
-                    onClick={handleClick}
-                    src={require("../images/Мои достижения/значимая (pdf.io).jpg")}
-                    alt="Диплом"
-                  />
+                  <img className="me__image" onClick={handleClick} src={require("../images/Мои достижения/значимая (pdf.io).jpg")} alt="Диплом" />
                 </div>
                 <div className="me__vinner-container">
                   <img

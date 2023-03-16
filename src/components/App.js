@@ -1,7 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
+import { Route, Routes } from "react-router-dom";
 import Main from "./Main";
 import Esse from "./Esse";
 import Video from "./Video";
@@ -14,6 +12,12 @@ import Contacts from "./Contacts";
 import News from "./News";
 import Popup from "./Popup";
 import Admin from "./admin/Admnin";
+import StudentsExaminations from "./students/StudentsExaminations";
+import StudentsPlanform from "./students/StudentsPlanform";
+import ColleaguesWork from "./colleagues/colleaguesWork";
+import ColleaguesMain from "./colleagues/colleagues";
+import VideoMain from "./video/VideoMain";
+import VideoScool from "./video/VideoScool";
 
 function App() {
   const [popup, setPopup] = useState(false);
@@ -41,49 +45,30 @@ function App() {
       <div className="page">
         {/* <Redirect from="/" to="/main" /> */}
         {/* <Header /> */}
-        <Switch>
-          <Route exact path="/">
-            <Main item={setItem} isOpen={setPopup} />
+        <Routes>
+          <Route path="/" element={<Main item={setItem} isOpen={setPopup} />} />
+          <Route path="/esse" element={<Esse />} />
+          <Route path="/colleagues" element={<Colleagues />}>
+            <Route path="main" element={<ColleaguesMain />} />
+            <Route path="work" element={<ColleaguesWork />} />
           </Route>
-          <Route path="/esse">
-            <Esse />
+          <Route path="/aboutme" element={<AboutMe item={setItem} isOpen={setPopup} />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/video" element={<Video />}>
+            <Route path="main" element={<VideoMain />} />
+            <Route path="school" element={<VideoScool />} />
           </Route>
-          <Route path="/colleagues">
-            <Colleagues />
-          </Route>
-          <Route path="/aboutme">
-            <AboutMe item={setItem} isOpen={setPopup} />
-          </Route>
-          <Route path="/students">
-            <Students />
-          </Route>
-          <Route path="/video">
-            <Video />
-          </Route>
-          <Route path="/parents">
-            <Parents />
-          </Route>
-          <Route path="/photo">
-            <Photo item={setItem} isOpen={setPopup} />
-          </Route>
-          <Route path="/contacts">
-            <Contacts />
-          </Route>
-          <Route path="/news">
-            <News item={setItem} isOpen={setPopup} />
-          </Route>
-          <Route path="/admin">
-            <Admin />
-          </Route>
-        </Switch>
+          <Route path="/parents" element={<Parents />} />
+          <Route path="/photo" element={<Photo item={setItem} isOpen={setPopup} />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/news" element={<News item={setItem} isOpen={setPopup} />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/students/platform" element={<StudentsPlanform />} />
+          <Route path="/students/examination" element={<StudentsExaminations />} />
+        </Routes>
       </div>
 
-      <Popup
-        isOpen={popup}
-        onClose={closePopup}
-        name={item.name}
-        link={item.link}
-      />
+      <Popup isOpen={popup} onClose={closePopup} name={item.name} link={item.link} />
     </div>
   );
 }

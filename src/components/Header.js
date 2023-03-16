@@ -34,7 +34,7 @@ function Header() {
     if (location.pathname === "/colleagues/work") {
       setColleagues(true);
     }
-    if (location.pathname === "/colleagues") {
+    if (location.pathname === "/colleagues/main") {
       setColleagues(true);
       setVideo(false);
       setStudents(false);
@@ -58,7 +58,7 @@ function Header() {
     if (location.pathname === "/students/examination") {
       setStudents(true);
     }
-    if (location.pathname === "/video") {
+    if (location.pathname === "/video/main") {
       setVideo(true);
       setColleagues(false);
       setStudents(false);
@@ -115,14 +115,10 @@ function Header() {
       <div className="header__title-container">
         <p className="header__title">Учитель географии</p>
         <p className="header__title">Коротаева Анна Юрьевна</p>
-        <p className="header__title">
-          МАОУ Исетская СОШ №1 Исетского района Тюменской области
-        </p>
+        <p className="header__title">МАОУ Исетская СОШ №1 Исетского района Тюменской области</p>
       </div>
       <div className="header__slogan-container">
-        <h3 className="header__slogan">
-          "Ученик -это не сосуд, который надо наполнить,
-        </h3>
+        <h3 className="header__slogan">"Ученик -это не сосуд, который надо наполнить,</h3>
         <h3 className="header__slogan">а факел, который надо зажечь"</h3>
         <p className="header__slogan-autor">В.А.Сухомлинский</p>
       </div>
@@ -130,66 +126,19 @@ function Header() {
         <button className="header__menu-button" onClick={onMenu}></button>
         <p className="header__menu-button-text">МЕНЮ</p>
       </div>
-      <div
-        className={button ? "header__menu header__menu_open" : "header__menu"}
-      >
+      <div className={button ? "header__menu header__menu_open" : "header__menu"}>
         <ul className="header__menu-container header__menu-container_row">
-          <MenuItem
-            way={"/"}
-            text={"ГЛАВНАЯ"}
-            onPage={main}
-            onClick={offMenu}
-          />
-          <MenuItem
-            way={"/aboutme"}
-            text={"О СЕБЕ"}
-            onPage={aboutMe}
-            onClick={offMenu}
-          />
-          <MenuItem
-            way={"/students"}
-            text={"УЧЕНИКАМ"}
-            onPage={students}
-            onClick={offMenu}
-          />
-          <MenuItem
-            way={"/parents"}
-            text={"РОДИТЕЛЯМ"}
-            onPage={parents}
-            onClick={offMenu}
-          />
-          <MenuItem
-            way={"/colleagues"}
-            text={"КОЛЛЕГАМ"}
-            onPage={colleagues}
-            onClick={offMenu}
-          />
+          <MenuItem way={"/"} text={"ГЛАВНАЯ"} onPage={main} onClick={offMenu} />
+          <MenuItem way={"/aboutme"} text={"О СЕБЕ"} onPage={aboutMe} onClick={offMenu} />
+          <MenuItem way={"/students"} text={"УЧЕНИКАМ"} onPage={students} onClick={offMenu} />
+          <MenuItem way={"/parents"} text={"РОДИТЕЛЯМ"} onPage={parents} onClick={offMenu} />
+          <MenuItem way={"/colleagues/main"} text={"КОЛЛЕГАМ"} onPage={colleagues} onClick={offMenu} />
         </ul>
         <ul className="header__menu-container header__menu-container_row">
-          <MenuItem
-            way={"/video"}
-            text={"ВИДЕО"}
-            onPage={video}
-            onClick={offMenu}
-          />
-          <MenuItem
-            way={"/photo"}
-            text={"ФОТО"}
-            onPage={photo}
-            onClick={offMenu}
-          />
-          <MenuItem
-            way={"/contacts"}
-            text={"КОНТАКТЫ"}
-            onPage={contacts}
-            onClick={offMenu}
-          />
-          <MenuItem
-            way={"/news"}
-            text={"НОВОСТИ"}
-            onPage={news}
-            onClick={offMenu}
-          />
+          <MenuItem way={"/video/main"} text={"ВИДЕО"} onPage={video} onClick={offMenu} />
+          <MenuItem way={"/photo"} text={"ФОТО"} onPage={photo} onClick={offMenu} />
+          <MenuItem way={"/contacts"} text={"КОНТАКТЫ"} onPage={contacts} onClick={offMenu} />
+          <MenuItem way={"/news"} text={"НОВОСТИ"} onPage={news} onClick={offMenu} />
         </ul>
       </div>
     </header>
