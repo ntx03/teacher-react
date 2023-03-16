@@ -42,7 +42,7 @@ function App() {
         {/* <Redirect from="/" to="/main" /> */}
         {/* <Header /> */}
         <Switch>
-          <Route exact path="/main">
+          <Route exact path="/">
             <Main item={setItem} isOpen={setPopup} />
           </Route>
           <Route path="/esse">
