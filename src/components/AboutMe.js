@@ -1,6 +1,15 @@
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import Video from "../images/Коротаева А.Ю.mp4";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 function AboutMe({ item, isOpen }) {
   function handleClick(e) {
@@ -51,16 +60,18 @@ function AboutMe({ item, isOpen }) {
             <div className="me__container-documents">
               <p className="me__title">Видеопрезентация "Я - учитель"</p>
               <div className="me__card-container">
-                {/* <iframe  frameBorder={0} src="https://youtu.be/U8vALd5nYbs" /> */}
-                {/* <iframe frameBorder={0} src="https://dzen.ru/video/watch/6412daa5a2bc0f6db417a672?share_to=link" /> */}
-                <iframe
+                {/* <iframe src={Video} className="me__image" title="Видео презентация Я учитель!" /> */}
+                <video controls className="me__image">
+                  <source src={Video} type="video/mp4" />
+                </video>
+                {/* <iframe
                   className="me__image"
                   src="https://www.youtube.com/embed/U8vALd5nYbs"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
-                ></iframe>
+                ></iframe> */}
               </div>
             </div>
             <div className="me__container-documents">
@@ -162,6 +173,7 @@ function AboutMe({ item, isOpen }) {
             </div>
             <div className="me__container-documents">
               <p className="me__title">Достижения учеников</p>
+
               <div className="me__container-vinner">
                 <div className="me__vinner-container">
                   <img

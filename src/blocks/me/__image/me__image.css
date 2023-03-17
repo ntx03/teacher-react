@@ -1,12 +1,17 @@
 .me__image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: contain;
+  width: 97%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
 }
 
 .me__image:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.me__image-source {
+  width: 100%;
+  border: 1px red solid;
 }
